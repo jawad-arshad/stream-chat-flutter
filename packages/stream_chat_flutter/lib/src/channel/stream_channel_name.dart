@@ -27,11 +27,11 @@ class StreamChannelName extends StatelessWidget {
   final TextOverflow textOverflow;
 
   @override
-  Widget build(BuildContext context) => BetterStreamBuilder<String>(
-        stream: channel.nameStream,
-        initialData: channel.name,
+  Widget build(BuildContext context) => BetterStreamBuilder<User>(
+        stream: channel.createdByStream,
+        initialData: channel.createdBy,
         builder: (context, channelName) => Text(
-          channelName,
+          channelName.name,
           style: textStyle,
           overflow: textOverflow,
         ),
